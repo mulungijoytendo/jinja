@@ -76,7 +76,7 @@ const MediumPage: React.FC = () => {
       <div style={styles.container}>
         <h2 style={styles.title}>JNYPA Media Gallery</h2>
         <p style={styles.description}>
-          Showcasing the impactful work of the Jinja Network of Young People Living with HIV (JNYPA) in Eastern Uganda, promoting HIV prevention, empowerment, and stigma-free communities about our initiatives.
+          Showcasing the impactful work of the Jinja Network of Young People Living with HIV (JNYPA) in Eastern Uganda, promoting HIV prevention, empowerment, and stigma-free communities.
         </p>
         <div style={styles.toggle}>
           <button
