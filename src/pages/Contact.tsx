@@ -18,7 +18,7 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateForm = () => {
-    const newErrors = {};
+    const newErrors: any = {};
     if (!formData.firstName.trim()) newErrors.firstName = "First name is required";
     if (!formData.lastName.trim()) newErrors.lastName = "Last name is required";
     if (!formData.email.trim()) newErrors.email = "Email is required";
@@ -69,71 +69,71 @@ const Contact = () => {
     <div className="min-h-screen bg-gray-50">
       <Navigation />
       
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
-          <p className="text-xl text-gray-600">
+      <div className="max-w-6xl mx-auto px-4 py-8 sm:py-12">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600">
             Get in touch with JNYPA team
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h2>
-            <div className="space-y-6 mb-8">
-              <div className="flex items-center space-x-4">
-                <MapPin className="w-6 h-6 text-green-600" />
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Get In Touch</h2>
+            <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
+              <div className="flex items-center space-x-3 sm:space-x-4">
+                <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                 <div>
-                  <p className="text-gray-700">Jinja, Uganda</p>
+                  <p className="text-gray-700 text-sm sm:text-base">Jinja, Uganda</p>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4">
-                <Phone className="w-6 h-6 text-green-600" />
+              <div className="flex items-center space-x-3 sm:space-x-4">
+                <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                 <div>
-                  <p className="text-gray-700">+256 755 309734</p>
+                  <p className="text-gray-700 text-sm sm:text-base">+256 755 309734</p>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4">
-                <Mail className="w-6 h-6 text-green-600" />
+              <div className="flex items-center space-x-3 sm:space-x-4">
+                <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                 <div>
-                  <p className="text-gray-700">info@jnypa.org</p>
+                  <p className="text-gray-700 text-sm sm:text-base">info@jnypa.org</p>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4">
-                <Clock className="w-6 h-6 text-green-600" />
+              <div className="flex items-center space-x-3 sm:space-x-4">
+                <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                 <div>
-                  <p className="text-gray-700">Monday - Friday: 8:00 AM - 5:00 PM</p>
-                  <p className="text-gray-700">Saturday: 9:00 AM - 1:00 PM</p>
+                  <p className="text-gray-700 text-sm sm:text-base">Monday - Friday: 8:00 AM - 5:00 PM</p>
+                  <p className="text-gray-700 text-sm sm:text-base">Saturday: 9:00 AM - 1:00 PM</p>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <MessageCircle className="w-6 h-6 text-green-600" />
+              <div className="flex items-center space-x-3 sm:space-x-4">
+                <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                 <div>
                   <a
                     href="https://wa.me/+256755309734"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-green-700 text-white font-semibold rounded-lg shadow-md hover:from-green-600 hover:to-green-800 transition-all duration-300 transform hover:scale-105"
+                    className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-green-500 to-green-700 text-white font-semibold rounded-lg shadow-md hover:from-green-600 hover:to-green-800 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
                   >
-                    <MessageCircle className="w-5 h-5 mr-2" />
+                    <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
                     Chat with us on WhatsApp
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <div className="flex space-x-4">
+              <div className="flex items-center space-x-3 sm:space-x-4">
+                <div className="flex space-x-3 sm:space-x-4">
                   <a
                     href="https://x.com/JNYPA"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-green-600 hover:text-blue-600"
                   >
-                    <Twitter className="w-6 h-6" />
+                    <Twitter className="w-5 h-5 sm:w-6 sm:h-6" />
                   </a>
                   <a
                     href="https://www.facebook.com/JNYPA"
@@ -141,7 +141,7 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     className="text-green-600 hover:text-blue-800"
                   >
-                    <Facebook className="w-6 h-6" />
+                    <Facebook className="w-5 h-5 sm:w-6 sm:h-6" />
                   </a>
                   <a
                     href="https://www.instagram.com/jinjanypa?igsh=MTVuZ2ozZXVydnI1bw=="
@@ -149,7 +149,7 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     className="text-green-600 hover:text-pink-600"
                   >
-                    <Instagram className="w-6 h-6" />
+                    <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
                   </a>
                 </div>
               </div>
@@ -157,15 +157,15 @@ const Contact = () => {
           </div>
             
           <Card>
-            <CardContent className="p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Send us a message</h3>
+            <CardContent className="p-4 sm:p-6 md:p-8">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Send us a message</h3>
               <div className="space-y-4">
                 {errors.submit && (
                   <p className="text-red-600 text-sm">{errors.submit}</p>
                 )}
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                       First Name
                     </label>
                     <Input
@@ -180,7 +180,7 @@ const Contact = () => {
                     )}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                       Last Name
                     </label>
                     <Input
@@ -197,7 +197,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                     Email
                   </label>
                   <Input
@@ -214,7 +214,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-3">
+                  <label className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                     Subject
                   </label>
                   <Input
@@ -230,7 +230,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                     Message
                   </label>
                   <Textarea
@@ -247,7 +247,7 @@ const Contact = () => {
                 </div>
                 
                 <Button
-                  className="w-full bg-green-600 hover:bg-green-700"
+                  className="w-full bg-green-600 hover:bg-green-700 text-sm sm:text-base"
                   onClick={handleSubmit}
                   disabled={isSubmitting}
                 >

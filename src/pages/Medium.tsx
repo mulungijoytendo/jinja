@@ -1,56 +1,7 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { cn } from '@/lib/utils';
+import Navigation from '@/components/Navigation';
 
-// Navigation Component
-const Navigation = () => {
-  const location = useLocation();
-
-  const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Programs', path: '/programs' },
-    { name: 'Medium', path: '/medium' },
-    { name: 'Contact', path: '/contact' },
-  ];
-
-  return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center space-x-2">
-            <img
-              src="/logo.png"
-              alt="Logo"
-              className="w-10 h-10 object-contain"
-            />
-          </Link>
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={cn(
-                    'px-3 py-2 rounded-md text-sm font-medium transition-colors',
-                    location.pathname === item.path
-                      ? 'bg-green-500 text-white'
-                      : 'text-gray-700 hover:bg-green-100 hover:text-green-600'
-                  )}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-  );
-};
-
-// Gallery Component
-const Gallery: React.FC = () => {
+const MediumPage: React.FC = () => {
   const [view, setView] = useState<'videos' | 'images'>('images');
 
   const images = [
@@ -120,38 +71,43 @@ const Gallery: React.FC = () => {
   ];
 
   return (
-    <div style={styles.container}>
-      <h2 style={styles.title}>JNYPA Media Gallery</h2>
-      <p style={styles.description}>
-        Showcasing the impactful work of the Jinja Network of Young People Living with HIV (JNYPA) in Eastern Uganda, promoting HIV prevention, empowerment, and stigma-free communities <strong>about</strong> our initiatives.
-      </p>
-      <div style={styles.toggle}>
-        <button
-          onClick={() => setView('images')}
-          style={view === 'images' ? styles.activeButton : styles.button}
-        >
-          Images
-        </button>
-        <button
-          onClick={() => setView('videos')}
-          style={view === 'videos' ? styles.activeButton : styles.button}
-        >
-          Videos
-        </button>
-      </div>
-      <div style={styles.grid}>
-        {view === 'images' &&
-          images.map((item, index) => (
-            <div key={`image-${index}`} style={styles.mediaContainer}>
-              <img src={item.src} alt={item.alt} style={styles.media} />
-            </div>
-          ))}
-        {view === 'videos' &&
-          videos.map((item, index) => (
-            <div key={`video-${index}`} style={styles.mediaContainer}>
-              <video src={item.src} controls style={styles.media} />
-            </div>
-          ))}
+    <div className="min-h-screen bg-gray-50">
+      <Navigation />
+      <div style={styles.container}>
+        <h2 style={styles.title}>JNYPA Media Gallery</h2>
+        <p style={styles.description}>
+          Showcasing the impactful work of the Jinja Network of Young People Living with HIV (JNYPA) in Eastern Uganda, promoting HIV prevention, empowerment, and stigma-free communities about our initiatives.
+        </p>
+        <div style={styles.toggle}>
+          <button
+            onClick={() => setView('images')}
+            style={view === 'images' ? styles.activeButton : styles.button}
+          >
+            Images
+          </button>
+          <button
+            onClick={() => setView('videos')}
+            style={view === 'videos' ? styles.activeButton : styles.button}
+          >
+            Videos
+          </button>
+        </div>
+        <div style={styles.grid}>
+          {view === 'images' &&
+            images.map((item, index) => (
+              <div key={`image-${index}`} style={styles.mediaContainer}>
+                <img src={item.src} alt={item.alt} style={styles.media} />
+                <p style={styles.caption}>{item.caption}</p>
+              </div>
+            ))}
+          {view === 'videos' &&
+            videos.map((item, index) => (
+              <div key={`video-${index}`} style={styles.mediaContainer}>
+                <video src={item.src} controls style={styles.media} />
+                <p style={styles.caption}>{item.caption}</p>
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );
@@ -161,34 +117,34 @@ const styles = {
   container: {
     maxWidth: '1200px',
     margin: '0 auto',
-    padding: '40px 20px',
+    padding: '20px 10px sm:40px 20px',
     fontFamily: 'Arial, sans-serif',
     backgroundColor: '#FFFFFF',
     minHeight: '100vh',
   },
   title: {
-    textAlign: 'center' as const,
-    fontSize: '2.5rem',
+    textAlign: 'center',
+    fontSize: '1.5rem sm:2rem md:2.5rem',
     color: '#1A3C34',
-    marginBottom: '20px',
+    marginBottom: '1rem sm:1.5rem',
   },
   description: {
-    textAlign: 'center' as const,
-    marginBottom: '30px',
-    fontSize: '1.1rem',
+    textAlign: 'center',
+    marginBottom: '1.5rem sm:2rem',
+    fontSize: '0.9rem sm:1rem md:1.1rem',
     color: '#4A4A4A',
     maxWidth: '800px',
-    margin: '0 auto 30px',
+    margin: '0 auto 1.5rem sm:0 auto 2rem',
   },
   toggle: {
     display: 'flex',
     justifyContent: 'center',
-    gap: '15px',
-    marginBottom: '30px',
+    gap: '10px sm:15px',
+    marginBottom: '1.5rem sm:2rem',
   },
   button: {
-    padding: '12px 24px',
-    fontSize: '1rem',
+    padding: '8px 16px sm:10px 20px md:12px 24px',
+    fontSize: '0.9rem sm:1rem',
     cursor: 'pointer',
     border: '2px solid #4CAF50',
     background: '#FFFFFF',
@@ -197,8 +153,8 @@ const styles = {
     transition: 'all 0.3s ease',
   },
   activeButton: {
-    padding: '12px 24px',
-    fontSize: '1rem',
+    padding: '8px 16px sm:10px 20px md:12px 24px',
+    fontSize: '0.9rem sm:1rem',
     cursor: 'pointer',
     border: '2px solid #4CAF50',
     background: '#4CAF50',
@@ -208,16 +164,16 @@ const styles = {
   },
   grid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-    gap: '25px',
-    padding: '0 10px',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+    gap: '15px sm:20px md:25px',
+    padding: '0 5px sm:0 10px',
   },
   mediaContainer: {
-    position: 'relative' as const,
+    position: 'relative',
     overflow: 'hidden',
     borderRadius: '10px',
     backgroundColor: '#F5F5F5',
-    padding: '10px',
+    padding: '8px sm:10px',
   },
   media: {
     width: '100%',
@@ -226,16 +182,12 @@ const styles = {
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     display: 'block',
   },
-};
-
-// Combined Medium Page Component
-const MediumPage: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <Navigation />
-      <Gallery />
-    </div>
-  );
+  caption: {
+    textAlign: 'center',
+    fontSize: '0.8rem sm:0.9rem',
+    color: '#4A4A4A',
+    marginTop: '0.5rem',
+  },
 };
 
 export default MediumPage;
