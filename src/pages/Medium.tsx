@@ -8,47 +8,38 @@ const MediumPage: React.FC = () => {
     {
       src: '/images/child-protection.jpg',
       alt: 'Adolescent and Young People Living with HIV Symposium',
-      caption: 'Supporting over 150 YPLHIV through regional symposiums since inception.',
     },
     {
       src: '/images/food-security.jpg',
       alt: 'Condom Distribution Event',
-      caption: 'Distributed 12,600 condoms to promote HIV prevention.',
     },
     {
       src: '/images/im.png',
       alt: 'Entrepreneurship Training for AGYW',
-      caption: 'Empowering 150 adolescent girls and young women with HIV/SGBV prevention and entrepreneurship skills.',
     },
     {
       src: '/images/i.png',
       alt: 'Inter-School Health Debates',
-      caption: 'Engaging over 10,500 youths in HIV prevention debates across 10 schools.',
     },
     {
       src: '/images/c.png',
       alt: 'Family Planning Services',
-      caption: 'Providing family planning services to 131 adolescent girls and young women.',
     },
     {
       src: '/images/u.png',
       alt: 'Family Planning Services',
-      caption: 'Providing family planning services to 131 adolescent girls and young women.',
     },
     {
       src: '/images/d.png',
       alt: 'Family Planning Services',
-      caption: 'Providing family planning services to 131 adolescent girls and young women.',
     },
     {
       src: '/images/b.png',
       alt: 'Family Planning Services',
-      caption: 'Providing family planning services to 131 adolescent girls and young women.',
     },
     {
       src: '/images/a.png',
       alt: 'Family Planning Services',
-      caption: 'Providing family planning services to 131 adolescent girls and young women.',
     },
   ];
 
@@ -56,17 +47,14 @@ const MediumPage: React.FC = () => {
     {
       src: '/images/videos/v.mp4',
       alt: 'JNYPA Community Dialogue',
-      caption: 'Community dialogues fostering HIV awareness and stigma reduction.',
     },
     {
       src: '/images/videos/Health & Wellness.mp4',
       alt: 'Youth Empowerment Event',
-      caption: 'Youth mentoring through dance, drama, and performing arts.',
     },
     {
       src: '/images/videos/z.mp4',
       alt: 'Nutrition Demonstration',
-      caption: 'Cooking demonstrations promoting proper nutrition practices.',
     },
   ];
 
@@ -97,14 +85,12 @@ const MediumPage: React.FC = () => {
             images.map((item, index) => (
               <div key={`image-${index}`} style={styles.mediaContainer}>
                 <img src={item.src} alt={item.alt} style={styles.media} />
-                <p style={styles.caption}>{item.caption}</p>
               </div>
             ))}
           {view === 'videos' &&
             videos.map((item, index) => (
               <div key={`video-${index}`} style={styles.mediaContainer}>
                 <video src={item.src} controls style={styles.media} />
-                <p style={styles.caption}>{item.caption}</p>
               </div>
             ))}
         </div>
@@ -181,12 +167,6 @@ const styles = {
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     display: 'block',
-  },
-  caption: {
-    textAlign: 'center',
-    fontSize: '0.8rem sm:0.9rem',
-    color: '#4A4A4A',
-    marginTop: '0.5rem',
   },
 };
 
